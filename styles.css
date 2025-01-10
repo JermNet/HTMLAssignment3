@@ -1,0 +1,308 @@
+body {
+	/* Sets the list of fonts the site should use. The first one is what should be used the other 3 are "fallbacks" just in case. MS Gothic and Times New Roman are in quotes since they are more than one word */
+	font-family: "MS Gothic", "Times New Roman", Times, serif;
+	
+	/* Jet (Black) */
+	background: #353535;
+	font-size: 22px;
+	
+	/* Sets distance between lines of text */
+	line-height: 32px;
+	
+	/* Magnolla (White) */
+	color: #F8F0FB;
+	margin: 0;
+	padding: 16px;
+	
+	/* This makes it so that words are allowed to break should they reach the end of the screen and the important modifier makes it so that this is put above all other word wraps in this css code */
+	word-wrap: break-word !important;
+}
+
+a {
+	/* Eminence (Purple) */
+	color: #7E3388;
+	text-decoration: none;
+}
+
+/* The the id in the square brackets with the "^=" basically means that it will apply to any id that starts with drop. I have done this just in case I wish to add more drop down menus so this is for future proofing mostly */
+.toggle, [id^=drop] {
+	/*Gets rid of all the little check boxes as I want those to be invisible to make the menu look nice */
+	display: none;
+}
+
+#logo {
+	display: block;
+	padding: 0 30px;
+	float: left;
+	
+	/*At the time of writing I don't know if this will be used since I'll probably use the favicon I made as the logo but who knows, I may use text or even a combination of both */
+	font-size: 20px;
+	line-height: 60px;
+	font-weight: bold;
+}
+
+#main-toggle {
+	/* Makes it so the mouse turns into that little pointy hand indicating that you can click on the label that this id is connected to */
+	cursor: pointer;
+	float: right;
+	padding: 28px 20px;
+	position: relative;
+	
+	/* Makes it so you can't double click/drag to select the text */
+	user-select: none;
+}
+
+/* Used to make one of the three little lines commonly seen in most hamburger menus */
+.nav-icon {
+	/* Aureolin (Yellow) */
+	background: #F9E900;
+	display: block;
+	height: 2px;
+	width: 18px; 
+	position: relative;
+}
+
+/* Makes the other two lines for the hamburger menu, problem is that they're on top of each other in the z axis and not in the y axis so that will be resolved in the next two blocks of css code */
+.nav-icon:before, .nav-icon:after {
+	/* Aureolin (Yellow) */
+	background: #F9E900;
+	content: " ";
+	display: block;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+}
+
+/* Fixes the aforementioned problem by adding 5px of empty space and since the is for before part, this pushes the line under the one created with the .nav-icon class */
+.nav-icon:before {
+	top: 5px;
+}
+
+/* Same thing as before but with -5px to push this line in the opposite direction. Alternatively, "bottom: 5px" would produce the same result but I prefer this way since it looks more constant and I only have to add one character when copy and pasting */
+.nav-icon:after {
+	top: -5px;
+}
+
+/* Using after here makes it so I don't have to add clearfix to everything (so, like a lot of this code, it's just here to make my life easier) */
+nav:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+nav ul {
+	float: right;
+	
+	/* Makes it so sub lists don't automatically indent should I decide to add them */
+	padding: 0;
+	margin: 0;
+	
+	/* Removes the little bullet points from the unordered list */
+	list-style: none;
+}
+
+nav ul li {
+	margin: 0;
+	
+	/* Makes it so the list items are side by side */
+	float: left;
+	
+	/* Indigo */
+	background-color: #5F0088;
+}
+
+nav a {
+	/* Makes it so the entire area of a link can be clicked on instead of just the text. Useful for mobile but also useful in general if you ask me */
+	display: block;
+	padding: 0 20px;
+	font-size: 20px;
+	line-height: 60px;
+	
+	/* Aureolin (Yellow) */
+	color: #F9E900;
+	
+	/* Removes the underlines */
+	text-decoration: none;
+}
+
+nav {
+	/* Aureolin (Yellow) */
+	color: #F9E900;
+	
+	/* Indigo */
+	background-color: #5F0088;
+}
+
+h2 {
+	/* Magnolla (White) */
+	color: #F8F0FB;
+	text-align: center;
+	line-height: 50px;
+}
+
+h4 {
+	/* Aureolin (Yellow) */
+	color: #F9E900;
+	text-align: center;
+	padding: 20px;
+}
+
+p {
+	padding: 25px 25px 0;
+}
+
+/* Simply centers images using this class */
+.center {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+
+}
+
+/* Simply rounds anything using this class */
+.round {
+	border-radius: 25px;
+}
+
+/* Sets up transition times for tags using this class */
+.spin {
+	transition: all 1s ease-in-out 0s;
+}
+
+/* Makes it so, on hover, anything using the spin class actualy lives up to it's name */
+.spin:hover {
+	transform: rotate(360deg);
+	transition: all 1s ease-in-out 0s;
+}
+
+/* Styling things within the footer*/
+footer {
+	padding: 20px;
+	
+}
+
+footer ul {
+	text-align: center;
+	list-style: none;
+}
+
+/* Adding padding to this specific p because it doesn't look centered using text-align, likely due to the use of the copyright character */
+footer p {
+	padding: 0 45px 0 0;
+}
+
+footer img {
+	max-width: 25%;
+	max-height: 50%;
+}
+
+footer a {
+	/* Aureolin (Yellow) */
+	color: #F9E900;
+}
+
+.card {
+	/* Eminence (Purple) */
+	background-color: #7E3388;
+	
+	/* Aureolin (Yellow) */
+	color: #F9E900;
+	padding: 16px;
+	height: 450px;
+	width: 450px;
+	margin: auto;
+}
+
+/* Styles everything within cards and cards2(this is mostly just to add gaps between the cards themselves */
+.cards {
+	
+	padding: 25px;
+	max-width: 1980px;
+	display: grid;
+	gap: 16px;
+	padding: 25px;
+}
+
+.cards-two {
+	
+	padding: 25px;
+	max-width: 1980px;
+	display: grid;
+	gap: 16px;
+	padding: 25px;
+}
+
+div a {
+	padding: 16px;
+	margin: auto;
+}
+
+/* Makes the grid repeat in different ways at these screen sizes */
+@media (min-width: 1176px) {
+	.cards {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (min-width: 1554px) {
+	.cards-two {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+@media (min-width: 1617px) {
+	.cards {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+/* Targets all types of media with a max width of 983px */
+@media all and (max-width: 983px) {
+	
+	nav {
+		margin: 0;
+	}
+	
+	nav ul {
+		float: none;
+	}
+	
+	/* Basically just removes the menu at this screen size and below */
+	.toggle+a, .menu {
+		display: none;
+	}
+	
+	/* Makes the hamburger menu show up */
+	.toggle {
+		display: block;
+		
+		/* Indigo */
+		background-color: #5F0088;
+		padding: 0 20px;
+		
+		/* Magnolla (White) */
+		color: #F8F0FB;
+		font-size: 20px;
+		line-height: 60px;
+		text-decoration: none;
+		border: none;
+	}
+	
+	/* Changes color slightly when hovered over */
+	.toggle:hover {
+		/* Eminence (Purple) */
+		background-color: #7E3388;
+	}
+	
+	/* Targets every id that starts with "drop" (once again, for future proofing), is checked and next to a list list. In simple terms, it makes it so that the menu items show up when the hamburger is clicked */
+	[id^=drop]:checked+ul {
+		display: block;
+	}
+	
+	/* Makes the list items actually look nice on smaller devices */
+	nav ul li {
+		display: block;
+		width: 100%;
+	}
+}
